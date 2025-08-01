@@ -1,9 +1,22 @@
 #include <iostream>
+#include <vector>
 
-using namespace std;
+void addNewProduct();
+void searchProduct();
+void updateProduct();
+void deleteProduct();
+void getListAllProducts();
+void updateStock();
 
 int main() {
-    cout << "Starting a New Personal Project For Learn";
+    std::cout << "Starting a New Personal Project For Learn";
 
     return 0;
 }
+
+void addNewProduct() {}
+void searchProduct() {}
+void updateProduct() {}
+void deleteProduct() {}
+void getListAllProducts() {}
+void updateStock() {}
