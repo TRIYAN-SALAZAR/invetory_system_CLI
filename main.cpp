@@ -177,7 +177,25 @@ void getListAllProducts() {
     }
 }
 
-void updateStock() {}
+void updateStock() {
+    int code, stock;
+    Product *foundProduct = nullptr;
+    
+    std::cout << "Ingresa el codigo del producto a eliminar\n";
+    std::cin >> code;
+
+    for(Product &p: PRODUCTS) {
+        if(p.code == code) {
+            foundProduct = &p;
+            break;
+        }
+    }
+    
+    std::cout << "Ingresa el stock";
+    std::cin >> stock;
+
+    foundProduct->stock = stock;
+}
 
 class Product {
     public:
