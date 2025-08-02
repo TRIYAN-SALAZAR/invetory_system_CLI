@@ -83,7 +83,7 @@ int main() {
 
 int menu() {
     int opt;
-    std::cout << "Que accion deseas realizar?\n";
+    std::cout << "\nQue accion deseas realizar?\n";
     std::cout << "1) Dar de alta un producto\n";
     std::cout << "2) Buscar un producto\n";
     std::cout << "3) Actualizar un producto\n";
@@ -204,7 +204,7 @@ void deleteProduct() {
         std::cout << "\nEstas seguro que deseas eliminar el producto? (yes\\no)";
         getline(std::cin >> std::ws, confirmation);
 
-        if(std::string("yes").find(confirmation))
+        if(confirmation.find("yes") != std::string::npos)
             PRODUCTS.erase(PRODUCTS.begin() + index);
     }
 }
