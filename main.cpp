@@ -47,28 +47,31 @@ void updateStock();
 int menu();
 
 int main() {
-    int opt = menu();
-    switch (opt)
-    {
-    case 1:
-        addNewProduct();
-        break;
-    case 2:
-        updateProduct();
-        break;
-    case 3:
-        updateProduct();
-        break;
-    case 4:
-        deleteProduct();
-        break;
-    case 5:
-        getListAllProducts();
-        break;
-    default:
-        std::cout << "Opcion no valida\n";
-        break;
+    while(true) {
+        int opt = menu();
+        switch (opt)
+        {
+        case 1:
+            addNewProduct();
+            break;
+        case 2:
+            updateProduct();
+            break;
+        case 3:
+            updateProduct();
+            break;
+        case 4:
+            deleteProduct();
+            break;
+        case 5:
+            getListAllProducts();
+            break;
+        default:
+            std::cout << "Opcion no valida\n";
+            break;
+        }
     }
+
     return 0;
 }
 
