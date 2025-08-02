@@ -80,21 +80,34 @@ void addNewProduct() {
     PRODUCTS.push_back(product);
 }
 
-void searchProductByCode() {}
+void searchProductByCode() {
+    int code;
+    Product p_found;
+
+    std::cout << "Ingresa el codigo del producto: ";
+    std::cin >> code;
+
+    for(Product p: PRODUCTS) {
+        if(p.code == code) {
+            p_found = p;
+            break;
+        }
+    }
+}
+
 void updateProduct() {}
 void deleteProduct() {}
 void getListAllProducts() {}
 void updateStock() {}
 
 class Product {
-    private:
+    public:
         int code;
         int stock;
         float priceBought;
         float priceSell;
         std::string description;
 
-    public:
         Product() {}
 
         void setProduct(int code, int stock, float priceSell, float priceBought) {
