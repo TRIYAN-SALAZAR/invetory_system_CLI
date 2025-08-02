@@ -6,7 +6,7 @@ class Product;
 std::vector<Product> PRODUCTS;
 
 void addNewProduct();
-void searchProduct();
+void searchProductByCode();
 void updateProduct();
 void deleteProduct();
 void getListAllProducts();
@@ -80,7 +80,7 @@ void addNewProduct() {
     PRODUCTS.push_back(product);
 }
 
-void searchProduct() {}
+void searchProductByCode() {}
 void updateProduct() {}
 void deleteProduct() {}
 void getListAllProducts() {}
