@@ -100,7 +100,46 @@ void searchProductByCode() {
         std::cout << "Este producto no existe.";
 }
 
-void updateProduct() {}
+void updateProduct() {
+    int code = -1;
+    int stock = -1;
+    float priceBought = -1;
+    float priceSell = -1;
+    std::string description = "";
+    std::string input;
+
+    Product *foundProduct;
+
+    std::getline(std::cin >> std::ws, input);
+    if (!input.empty()) code = std::stoi(input);
+
+    std::cout << "\nIngresa la cantidad total del producto (enter para no cambiar): ";
+    std::getline(std::cin, input);
+    if (!input.empty()) stock = std::stoi(input);
+
+    std::cout << "\nIngresa el precio de compra (enter para no cambiar): ";
+    std::getline(std::cin, input);
+    if (!input.empty()) priceBought = std::stof(input);
+
+    std::cout << "\nIngresa el precio de venta (enter para no cambiar): ";
+    std::getline(std::cin, input);
+    if (!input.empty()) priceSell = std::stof(input);
+
+    std::cout << "\nIngresa una breve descripcion (enter para no cambiar): ";
+    std::getline(std::cin, description);
+
+    for(Product &p: PRODUCTS) {
+        if(p.code == code) {
+            foundProduct = &p;
+            break;
+        }
+    }
+
+    if(foundProduct) {
+        foundProduct->updateProduct(stock, priceSell, priceBought, description);
+    }
+}
+
 void deleteProduct() {}
 void getListAllProducts() {}
 void updateStock() {}
@@ -128,6 +167,13 @@ class Product {
             this->priceSell = priceSell;
             this->priceBought = priceBought;
             this->description = description;
+        }
+
+        void updateProduct(int stock, float priceSell, float priceBought, std::string description) {
+            if(stock != -1) this->stock = stock;
+            if(priceSell != -1)this->priceSell = priceSell;
+            if(priceBought != -1)this->priceBought = priceBought;
+            if(description != "")this->description = description;
         }
 
         void showDataProduct() {
