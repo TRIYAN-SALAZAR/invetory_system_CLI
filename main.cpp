@@ -163,7 +163,20 @@ void deleteProduct() {
     }
 }
 
-void getListAllProducts() {}
+void getListAllProducts() {
+    std::cout << "LISTADO DE LOS PRODUCTOS\n";
+    std::cout << "--------------------\n";
+    
+    for(Product &pr: PRODUCTS) {
+        std::cout << "CODIGO: " << pr.code << std::endl;
+        std::cout << "DESCRIPCION: " << pr.description << std::endl;
+        std::cout << "PRECIO DE COMPRA: " << pr.priceBought << std::endl;
+        std::cout << "PRECIO DE VENTA: " << pr.priceSell << std::endl;
+        std::cout << "STOCK: " << pr.stock << std::endl;
+        std::cout << "--------------------" << std::endl;
+    }
+}
+
 void updateStock() {}
 
 class Product {
