@@ -59,7 +59,7 @@ int main() {
             addNewProduct();
             break;
         case 2:
-            updateProduct();
+            searchProductByCode();
             break;
         case 3:
             updateProduct();
