@@ -187,7 +187,7 @@ void deleteProduct() {
     Product *product = nullptr;
     std::string confirmation;
 
-    std::cout << "Ingresa el codigo del producto a eliminar";
+    std::cout << "\nIngresa el codigo del producto a eliminar: ";
     std::cin >> code;
 
     for(Product &pr: PRODUCTS) {
@@ -200,7 +200,7 @@ void deleteProduct() {
     }
 
     if(product) {
-        std::cout << "Estas seguro que deseas eliminar el producto?";
+        std::cout << "\nEstas seguro que deseas eliminar el producto? (yes\\no)";
         getline(std::cin >> std::ws, confirmation);
 
         if(std::string("yes").find(confirmation))
