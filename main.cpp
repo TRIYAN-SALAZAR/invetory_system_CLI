@@ -21,6 +21,7 @@ int main() {
         addNewProduct();
         break;
     case 2:
+        updateProduct();
         break;
     case 3:
         break;
