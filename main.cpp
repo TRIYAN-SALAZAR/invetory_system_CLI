@@ -1,5 +1,8 @@
 #include <iostream>
+#include <string>
 #include <vector>
+
+class Product;
 
 void addNewProduct();
 void searchProduct();
@@ -49,3 +52,28 @@ void updateProduct() {}
 void deleteProduct() {}
 void getListAllProducts() {}
 void updateStock() {}
+
+class Product {
+    private:
+        int code;
+        int stock;
+        float priceBought;
+        float priceSell;
+        std::string description;
+
+    public:
+        Product(int code, int stock, float priceSell, float priceBought) {
+            this->code = code;
+            this->stock = stock;
+            this->priceSell = priceSell;
+            this->priceBought = priceBought;
+        }
+
+        Product(int code, int stock, float priceSell, float priceBought, std::string description) {
+            this->code = code;
+            this->stock = stock;
+            this->priceSell = priceSell;
+            this->priceBought = priceBought;
+            this->description = description;
+        }
+};
