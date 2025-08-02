@@ -82,17 +82,22 @@ void addNewProduct() {
 
 void searchProductByCode() {
     int code;
-    Product p_found;
+    Product *foundProduct = nullptr;
 
     std::cout << "Ingresa el codigo del producto: ";
     std::cin >> code;
 
-    for(Product p: PRODUCTS) {
+    for(Product &p: PRODUCTS) {
         if(p.code == code) {
-            p_found = p;
+            foundProduct = &p;
             break;
         }
     }
+
+    if(foundProduct)
+        foundProduct->showDataProduct();
+    else
+        std::cout << "Este producto no existe.";
 }
 
 void updateProduct() {}
@@ -123,5 +128,13 @@ class Product {
             this->priceSell = priceSell;
             this->priceBought = priceBought;
             this->description = description;
+        }
+
+        void showDataProduct() {
+            std::cout << "Codigo: " << this->code;
+            std::cout << "\nStock: " << this->stock;
+            std::cout << "\nPrecio de Venta: " << this->priceSell;
+            std::cout << "\nPrecio de compra: " << this->priceBought;
+            std::cout << "\nDescripcion: " << this->description;
         }
 };
