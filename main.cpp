@@ -145,7 +145,8 @@ void updateProduct() {
     std::string input;
 
     Product *foundProduct;
-
+    
+    std::cout << "\nIngrese el codigo del producto: ";
     std::getline(std::cin >> std::ws, input);
     if (!input.empty()) code = std::stoi(input);
 
