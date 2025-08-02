@@ -125,7 +125,7 @@ void searchProductByCode() {
     int code;
     Product *foundProduct = nullptr;
 
-    std::cout << "Ingresa el codigo del producto: ";
+    std::cout << "\nIngresa el codigo del producto: ";
     std::cin >> code;
 
     for(Product &p: PRODUCTS) {
@@ -138,7 +138,7 @@ void searchProductByCode() {
     if(foundProduct)
         foundProduct->showDataProduct();
     else
-        std::cout << "Este producto no existe.";
+        std::cout << "\nEste producto no existe.\n";
 }
 
 void updateProduct() {
