@@ -71,11 +71,7 @@ void addNewProduct() {
     std::cin >> description;
 
     Product product;
-    if(description != "") {
-        product.setProduct(code, stock, priceSell, priceBought);
-    } else {
-        product.setProduct(code, stock, priceSell, priceBought, description);
-    }
+    product.setProduct(code, stock, priceSell, priceBought, description);
 
     PRODUCTS.push_back(product);
 }
@@ -154,19 +150,12 @@ class Product {
 
         Product() {}
 
-        void setProduct(int code, int stock, float priceSell, float priceBought) {
-            this->code = code;
-            this->stock = stock;
-            this->priceSell = priceSell;
-            this->priceBought = priceBought;
-        }
-
         void setProduct(int code, int stock, float priceSell, float priceBought, std::string description) {
             this->code = code;
             this->stock = stock;
             this->priceSell = priceSell;
             this->priceBought = priceBought;
-            this->description = description;
+            if(description != "") this->description = description;
         }
 
         void updateProduct(int stock, float priceSell, float priceBought, std::string description) {
