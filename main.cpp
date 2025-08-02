@@ -105,7 +105,7 @@ void addNewProduct() {
     std::cin >> priceSell;
 
     std::cout << "\nIngresa una breve descripcion: ";
-    std::cin >> description;
+    std::getline(std::cin, description);
 
     Product product;
     product.setProduct(code, stock, priceSell, priceBought, description);
