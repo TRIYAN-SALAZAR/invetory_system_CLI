@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.css": "css",
+        "*.js": "javascript",
+        "*.html": "html",
+        "*.jsx": "javascriptreact",
+        ".gitignore": "ignore",
+        "string": "cpp"
+    }
+}
