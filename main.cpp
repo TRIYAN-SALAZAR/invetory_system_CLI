@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 class Product {
     public:
@@ -41,10 +42,13 @@ std::vector<Product> PRODUCTS;
 void addNewProduct();
 void searchProductByCode();
 void updateProduct();
+
 void deleteProduct();
 void getListAllProducts();
 void updateStock();
+
 int menu();
+void clean_buffer();
 
 int main() {
     while(true) {
@@ -108,6 +112,7 @@ void addNewProduct() {
     std::cin >> priceSell;
 
     std::cout << "\nIngresa una breve descripcion: ";
+    clean_buffer();
     std::getline(std::cin, description);
 
     Product product;
@@ -235,4 +240,8 @@ void updateStock() {
     std::cin >> stock;
 
     foundProduct->stock = stock;
+}
+
+void clean_buffer() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
