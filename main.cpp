@@ -57,10 +57,13 @@ int main() {
         updateProduct();
         break;
     case 3:
+        updateProduct();
         break;
     case 4:
+        deleteProduct();
         break;
     case 5:
+        getListAllProducts();
         break;
     default:
         std::cout << "Opcion no valida\n";
