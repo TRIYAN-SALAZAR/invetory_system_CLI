@@ -1,0 +1,27 @@
+# Compilados de C++
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Archivos de depuración
+*.dSYM/
+*.stackdump
+*.core
+
+# Archivos de configuración del IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos temporales
+*~
+*.swp
+.DS_Store
+
+# Archivos de respaldo
+*.bak
+*.tmp
