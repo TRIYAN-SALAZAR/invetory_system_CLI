@@ -13,7 +13,7 @@ class Product {
 
         Product() {}
 
-        void setProduct(int code, int stock, float priceSell, float priceBought, std::string description) {
+        Product(int code, int stock, float priceSell, float priceBought, std::string description) {
             this->code = code;
             this->stock = stock;
             this->priceSell = priceSell;
@@ -49,8 +49,10 @@ void updateStock();
 
 int menu();
 void clean_buffer();
+void adding_for_test();
 
 int main() {
+    adding_for_test();
     while(true) {
         int opt = menu();
         switch (opt)
@@ -115,8 +117,7 @@ void addNewProduct() {
     clean_buffer();
     std::getline(std::cin, description);
 
-    Product product;
-    product.setProduct(code, stock, priceSell, priceBought, description);
+    Product product(code, stock, priceSell, priceBought, description);
 
     PRODUCTS.push_back(product);
 }
@@ -244,4 +245,12 @@ void updateStock() {
 
 void clean_buffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+void adding_for_test() {
+    Product p1(90323, 800, 83.90, 30.32, "");
+    Product p2(90223, 100, 90.90, 30.32, "mangos");\
+
+    PRODUCTS.push_back(p1);
+    PRODUCTS.push_back(p2);
 }
