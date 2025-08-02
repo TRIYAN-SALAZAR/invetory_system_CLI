@@ -137,7 +137,32 @@ void updateProduct() {
     }
 }
 
-void deleteProduct() {}
+void deleteProduct() {
+    int code, index = 0;
+    Product *product = nullptr;
+    std::string confirmation;
+
+    std::cout << "Ingresa el codigo del producto a eliminar";
+    std::cin >> code;
+
+    for(Product &pr: PRODUCTS) {
+        if(pr.code == code){ 
+            product = &pr;
+            break;
+        }
+
+        index++;
+    }
+
+    if(product) {
+        std::cout << "Estas seguro que deseas eliminar el producto?";
+        getline(std::cin >> std::ws, confirmation);
+
+        if(std::string("yes").find(confirmation))
+            PRODUCTS.erase(PRODUCTS.begin() + index);
+    }
+}
+
 void getListAllProducts() {}
 void updateStock() {}
 
