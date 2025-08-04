@@ -7,6 +7,9 @@
 *.so
 *.dll
 
+# Carpeta de compilación
+build/
+
 # Archivos de depuración
 *.dSYM/
 *.stackdump
