@@ -1,6 +1,4 @@
-#ifndef HEADER_H_PRODUCT_CLASS
-#define HEADER_H_PRODUCT_CLASS
-
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -37,4 +35,3 @@ class Product {
             std::cout << "\nDescripcion: " << this->description;
         }
 };
-#endif
