@@ -1,0 +1,4 @@
+#ifndef HEADER_H_PRODUCT_CLASS
+#define HEADER_H_PRODUCT_CLASS
+
+#endif
