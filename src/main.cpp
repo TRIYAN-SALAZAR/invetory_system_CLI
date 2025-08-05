@@ -137,12 +137,7 @@ void updateProduct() {
     std::cout << "\nIngresa una breve descripcion (enter para no cambiar): ";
     std::getline(std::cin, description);
 
-    for(Product &p: PRODUCTS) {
-        if(p.code == code) {
-            foundProduct = &p;
-            break;
-        }
-    }
+    foundProduct = searchProductInVector(code);
 
     if(foundProduct) {
         foundProduct->updateProduct(stock, priceSell, priceBought, description);
