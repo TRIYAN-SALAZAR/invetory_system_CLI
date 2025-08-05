@@ -14,6 +14,10 @@ void deleteProduct();
 void getListAllProducts();
 void updateStock();
 
+void sellProduct();
+void buyProduct();
+Product* searchProductInVector(int code);
+
 int menu();
 void clean_buffer();
 void adding_for_test();
@@ -96,12 +100,7 @@ void searchProductByCode() {
     std::cout << "\nIngresa el codigo del producto: ";
     std::cin >> code;
 
-    for(Product &p: PRODUCTS) {
-        if(p.code == code) {
-            foundProduct = &p;
-            break;
-        }
-    }
+    foundProduct = searchProductInVector(code);
 
     if(foundProduct)
         foundProduct->showDataProduct();
@@ -210,6 +209,10 @@ void updateStock() {
     foundProduct->stock = stock;
 }
 
+void sellProduct() {}
+
+void buyProduct() {}
+
 void clean_buffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -220,4 +223,12 @@ void adding_for_test() {
 
     PRODUCTS.push_back(p1);
     PRODUCTS.push_back(p2);
+}
+
+Product* searchProductInVector(int code) {
+    for(Product &p: PRODUCTS) {
+        if(p.code == code) return &p;        
+    }
+
+    return nullptr;
 }
