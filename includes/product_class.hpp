@@ -13,5 +13,7 @@ class Product {
         Product(int code, int stock, float priceSell, float priceBought, std::string description);
 
         void updateProduct(int stock, float priceSell, float priceBought, std::string description);
+        void increaseStoctByPurchase(int stock);
+        void decreaseStockBySell(int stock);
         void showDataProduct();
 };

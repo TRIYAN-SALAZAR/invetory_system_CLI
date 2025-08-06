@@ -23,3 +23,11 @@ void Product::showDataProduct() {
     std::cout << "\nPrecio de compra: " << this->priceBought;
     std::cout << "\nDescripcion: " << this->description;
 }
+
+void Product::increaseStoctByPurchase(int stock) {
+    this->stock += stock;
+}
+
+void Product::decreaseStockBySell(int stock) {
+    this->stock -= stock;
+}
