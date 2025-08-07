@@ -29,5 +29,11 @@ void Product::increaseStoctByPurchase(int stock) {
 }
 
 void Product::decreaseStockBySell(int stock) {
-    this->stock -= stock;
+    int resForSubstration = this->stock - stock;
+    
+    if(resForSubstration >= 0) {
+        this->stock = resForSubstration;
+    } else {
+        this->stock = 0;
+    }
 }
