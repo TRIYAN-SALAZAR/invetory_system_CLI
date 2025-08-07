@@ -204,9 +204,43 @@ void updateStock() {
     foundProduct->stock = stock;
 }
 
-void sellProduct() {}
+void sellProduct() {
+    int code, stock;
+    Product *foundProduct = nullptr;
 
-void buyProduct() {}
+    std::cout << "\nIngresa el codigo del producto: ";
+    std::cin >> code;
+
+    foundProduct = searchProductInVector(code);
+
+    std::cout << "Cuantas piezas se estan vendiendo?\n";
+    std::cin >> stock;
+
+    if(foundProduct) {
+        foundProduct->decreaseStockBySell(stock);
+    } else {
+        std::cout << "Este producto no existe";
+    }
+}
+
+void buyProduct() {
+    int code, stock;
+    Product *foundProduct = nullptr;
+
+    std::cout << "\nIngresa el codigo del producto: ";
+    std::cin >> code;
+
+    foundProduct = searchProductInVector(code);
+
+    std::cout << "Cuantas piezas se estan vendiendo?\n";
+    std::cin >> stock;
+
+    if(foundProduct) {
+        foundProduct->increaseStoctByPurchase(stock);    
+    } else {
+        std::cout << "Este producto no existe";
+    }
+}
 
 void clean_buffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
