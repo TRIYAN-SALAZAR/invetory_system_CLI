@@ -1,6 +1,8 @@
 #include <data_persistance.hpp>
+#include <fstream>
+#include <string>
 
-void readAndExtractTheData() {}
-void writeNewData() {}
-void deleteRow() {}
-void updateRow() {}
+void DataPersistance::readAndExtractTheData() {}
+void DataPersistance::writeNewData() {}
+void DataPersistance::deleteRow() {}
+void DataPersistance::updateRow() {}

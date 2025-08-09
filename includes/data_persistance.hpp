@@ -1,6 +1,9 @@
 #pragma once
 
-void readAndExtractTheData();
-void writeNewData();
-void deleteRow();
-void updateRow();
+class DataPersistance {
+    public:
+    void readAndExtractTheData();
+    void writeNewData();
+    void deleteRow();
+    void updateRow();
+};
