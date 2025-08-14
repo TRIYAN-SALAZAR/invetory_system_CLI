@@ -152,14 +152,7 @@ void deleteProduct() {
     std::cout << "\nIngresa el codigo del producto a eliminar: ";
     std::cin >> code;
 
-    for(Product &pr: PRODUCTS) {
-        if(pr.code == code){ 
-            product = &pr;
-            break;
-        }
-
-        index++;
-    }
+    product = searchProductInVector(code);
 
     if(product) {
         std::cout << "\nEstas seguro que deseas eliminar el producto? (yes\\no)";
@@ -191,12 +184,7 @@ void updateStock() {
     std::cout << "Ingresa el codigo del producto a eliminar\n";
     std::cin >> code;
 
-    for(Product &p: PRODUCTS) {
-        if(p.code == code) {
-            foundProduct = &p;
-            break;
-        }
-    }
+    foundProduct = searchProductInVector(code);
     
     std::cout << "Ingresa el stock";
     std::cin >> stock;
